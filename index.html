@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Launch Plan: Dr. Greg Pedro</title>
+    <!-- Chart.js for data visualizations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <style>
+        :root {
+            --primary-color: #005a87;
+            --secondary-color: #6ac1e5;
+            --accent-color: #eb6909;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.2;
+        }
+        
+        .header-animation svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
+        }
+        
+        h4 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        ul, ol {
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+        
+        tr:nth-child(even) {
+            background-color: var(--light-bg);
+        }
+        
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .card {
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            border-top: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Animation containers */
+        .animation-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: var(--light-bg);
+            border-radius: 5px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .tall-animation {
+            height: 400px;
+        }
+        
+        /* Patient persona cards */
+        .persona-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            scroll-behavior: smooth;
+        }
+        
+        .persona-card {
+            min-width: 280px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .persona-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .persona-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .persona-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .persona-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        /* Marketing funnel */
+        .funnel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .funnel-section {
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 10px;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            transition: width 0.5s ease;
+        }
+        
+        .funnel-section:nth-child(2) {
+            width: 80%;
+            background-color: var(--secondary-color);
+        }
+        
+        .funnel-section:nth-child(3) {
+            width: 70%;
+            background-color: var(--accent-color);
+        }
+        
+        .funnel-section:nth-child(4) {
+            width: 50%;
+            background-color: #7acc6e;
+        }
+        
+        .funnel-section:nth-child(5) {
+            width: 30%;
+            background-color: #f7d547;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            margin-top: 0;
+        }
+        
+        /* Map Styles */
+        .map-container {
+            position: relative;
+            height: 100%;
+        }
+        
+        .map-si {
+            width: 70%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                box-shadow: 0 0 0 0 rgba(235, 105, 9, 0.7);
+            }
+            70% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 0 10px rgba(235, 105, 9, 0);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(0.8);
+                box-shadow: 0 0 0 0 rgba(235, 105, 9, 0);
+            }
+        }
+        
+        /* Competitive advantage visualization */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .advantage-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+        }
+        
+        .advantage-card:nth-child(1)::before {
+            background-color: var(--primary-color);
+        }
+        
+        .advantage-card:nth-child(2)::before {
+            background-color: var(--secondary-color);
+        }
+        
+        .advantage-card:nth-child(3)::before {
+            background-color: var(--accent-color);
+        }
+        
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .advantage-card:nth-child(1) .advantage-icon {
+            background-color: var(--primary-color);
+        }
+        
+        .advantage-card:nth-child(2) .advantage-icon {
+            background-color: var(--secondary-color);
+        }
+        
+        .advantage-card:nth-child(3) .advantage-icon {
+            background-color: var(--accent-color);
+        }
+        
+        .advantage-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        /* Budget chart */
+        .budget-container {
+            display: flex;
+            height: 100%;
+        }
+        
+        .budget-chart {
+            flex: 2;
+        }
+        
+        .budget-legend {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        /* Animation for technologies */
+        .tech-animation {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .tech-item {
+            text-align: center;
+            width: 33%;
+        }
+        
+        .tech-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: white;
+            font-size: 2.5rem;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .tech-icon.yomi {
+            background-color: var(--primary-color);
+            animation-delay: 0s;
+        }
+        
+        .tech-icon.mface {
+            background-color: var(--secondary-color);
+            animation-delay: 0.5s;
+        }
+        
+        .tech-icon.laser {
+            background-color: var(--accent-color);
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .tech-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .tech-description {
+            font-size: 0.9rem;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        /* Workflow animation */
+        .workflow-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .workflow-step {
+            width: 80%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: white;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            animation: slideIn 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .workflow-step:nth-child(2) {
+            border-left-color: var(--secondary-color);
+            animation-delay: 0.5s;
+        }
+        
+        .workflow-step:nth-child(3) {
+            border-left-color: var(--accent-color);
+            animation-delay: 1s;
+        }
+        
+        .workflow-step:nth-child(4) {
+            border-left-color: #7acc6e;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .workflow-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        /* For mobile devices */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            h4 {
+                font-size: 1.2rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container.right {
+                left: 0%;
+            }
+            
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 15px;
+            }
+            
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-animation {
+                flex-direction: column;
+            }
+            
+            .tech-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .animation-container {
+                height: auto;
+                min-height: 300px;
+            }
+            
+            .tall-animation {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-animation">
+            <svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background pattern for header -->
+                <defs>
+                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid)" />
+                
+                <!-- Animated elements -->
+                <circle cx="200" cy="150" r="30" fill="rgba(255,255,255,0.3)">
+                    <animate attributeName="r" values="30;40;30" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="800" cy="100" r="20" fill="rgba(255,255,255,0.2)">
+                    <animate attributeName="r" values="20;30;20" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="600" cy="200" r="25" fill="rgba(255,255,255,0.3)">
+                    <animate attributeName="r" values="25;35;25" dur="5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+        <div class="container header-content">
+            <h1 data-aos="fade-up">STRATEGIC LAUNCH PLAN</h1>
+            <div class="subtitle" data-aos="fade-up" data-aos-delay="200">Dr. Greg Pedro – Staten Island Dental & Aesthetic Practice</div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- EXECUTIVE SUMMARY -->
+        <section id="executive-summary" data-aos="fade-up">
+            <h2>1.0 EXECUTIVE SUMMARY</h2>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="tech-animation">
+                    <div class="tech-item">
+                        <div class="tech-icon yomi">
+                            <span>Y</span>
+                        </div>
+                        <div class="tech-name">YOMI ROBOTIC</div>
+                        <div class="tech-description">Precision dental implants with robotic assistance</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon mface">
+                            <span>M</span>
+                        </div>
+                        <div class="tech-name">M-FACE BY BTL</div>
+                        <div class="tech-description">Non-invasive facial aesthetics technology</div>
+                    </div>
+                    <div class="tech-item">
+                        <div class="tech-icon laser">
+                            <span>L</span>
+                        </div>
+                        <div class="tech-name">ADVANCED LASERS</div>
+                        <div class="tech-description">Aesthetic and TMJ treatments</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">THE OPPORTUNITY</h3>
+            <p data-aos="fade-up">Dr. Greg Pedro enters the Staten Island market with groundbreaking technology and specialized expertise:</p>
+            <ul data-aos="fade-up">
+                <li><strong>YOMI™ ROBOTIC SYSTEM</strong> for precision dental implants</li>
+                <li><strong>M-FACE BY BTL</strong> for non-invasive facial aesthetics</li>
+                <li><strong>ADVANCED LASERS</strong> for aesthetic and TMJ treatments</li>
+            </ul>
+            
+            <h3 data-aos="fade-up">MARKET ANALYSIS HIGHLIGHTS</h3>
+            <ul data-aos="fade-up">
+                <li><strong>Affluent aging population</strong> with significant dental and aesthetic needs</li>
+                <li><strong>Strong prevalence of TMJ disorders</strong></li>
+                <li><strong>Limited competition</strong> offering this unique combination of services</li>
+            </ul>
+            
+            <h3 data-aos="fade-up">RECOMMENDED STRATEGY</h3>
+            <p data-aos="fade-up">An integrated marketing approach that leverages Dr. Pedro's:</p>
+            <ul data-aos="fade-up">
+                <li>Specialized expertise</li>
+                <li>Cutting-edge technology</li>
+                <li>Local Staten Island roots</li>
+            </ul>
+        </section>
+        
+        <!-- MARKET ANALYSIS -->
+        <section id="market-analysis" data-aos="fade-up">
+            <h2>2.0 STATEN ISLAND MARKET VISUALIZATION</h2>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="map-container">
+                    <svg class="map-si" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Simplified Staten Island map shape -->
+                        <path d="M100,100 C100,50 200,50 250,75 C300,100 350,150 350,200 C350,250 300,300 250,325 C200,350 150,350 100,300 C50,250 50,200 100,100 Z" fill="#e3f2fd" stroke="#005a87" stroke-width="2"></path>
+                        
+                        <!-- Main neighborhoods -->
+                        <text x="150" y="150" font-size="12" fill="#333">St. George</text>
+                        <text x="180" y="200" font-size="12" fill="#333">Todt Hill</text>
+                        <text x="250" y="250" font-size="12" fill="#333">New Dorp</text>
+                        <text x="150" y="280" font-size="12" fill="#333">Tottenville</text>
+                        
+                        <!-- Demographic hotspots -->
+                        <circle class="map-marker" cx="150" cy="150" r="5" fill="#eb6909"></circle>
+                        <circle class="map-marker" cx="180" cy="200" r="5" fill="#eb6909"></circle>
+                        <circle class="map-marker" cx="250" cy="250" r="5" fill="#eb6909"></circle>
+                        <circle class="map-marker" cx="150" cy="280" r="5" fill="#eb6909"></circle>
+                    </svg>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">DEMOGRAPHIC GOLDMINE</h3>
+            
+            <table data-aos="fade-up">
+                <thead>
+                    <tr>
+                        <th>Key Indicator</th>
+                        <th>Staten Island</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Population</td>
+                        <td>~495,000</td>
+                        <td>Substantial market size</td>
+                    </tr>
+                    <tr>
+                        <td>Residents 65+</td>
+                        <td>17.4%</td>
+                        <td>Prime implant candidates</td>
+                    </tr>
+                    <tr>
+                        <td>Adults 20-59</td>
+                        <td>~51%</td>
+                        <td>Key aesthetic/TMJ demographic</td>
+                    </tr>
+                    <tr>
+                        <td>Median Income</td>
+                        <td>$95,543-$96,730</td>
+                        <td>Above NYC average</td>
+                    </tr>
+                    <tr>
+                        <td>Households $100K+</td>
+                        <td>39.7%</td>
+                        <td>Strong ability to afford premium services</td>
+                    </tr>
+                    <tr>
+                        <td>Homeownership</td>
+                        <td>68.7%</td>
+                        <td>Financial stability indicator</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 data-aos="fade-up">LOCAL HEALTHCARE NEEDS VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <canvas id="healthcareChart"></canvas>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-title">DENTAL IMPLANTS OPPORTUNITY</div>
+                        <ul>
+                            <li>1 in 4 NYC adults 65+ have lost all teeth</li>
+                            <li>40% of adult New Yorkers skip annual dental visits</li>
+                            <li>Majority of dentists don't serve Medicaid patients</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-title">AESTHETIC PROCEDURE DEMAND</div>
+                        <ul>
+                            <li>Growing trend for non-invasive facial rejuvenation</li>
+                            <li>Integration of dental and facial aesthetics gaining popularity</li>
+                            <li>High demand for minimal-downtime procedures</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-title">TMJ DISORDER PREVALENCE</div>
+                        <ul>
+                            <li>Affects 5-12% of population (24,500-59,000 Staten Islanders)</li>
+                            <li>Higher prevalence in women and adults 20-40</li>
+                            <li>Myofascial pain is most common type (42.6%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- TARGET PATIENTS -->
+        <section id="target-patients" data-aos="fade-up">
+            <h2>3.0 TARGET PATIENT PROFILES & COMPETITIVE LANDSCAPE</h2>
+            
+            <h3 data-aos="fade-up">IDEAL PATIENT VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="persona-container">
+                    <div class="persona-card">
+                        <div class="persona-avatar">Y</div>
+                        <div class="persona-title">YOMI IMPLANT PATIENT</div>
+                        <div class="persona-subtitle">Adults 55+, Higher Income</div>
+                        <p><strong>Primary:</strong> Adults 55+, higher income ($100K+), seeking permanent tooth replacement.</p>
+                        <p><strong>Values:</strong> Precision, quality of life, advanced technology, expertise</p>
+                    </div>
+                    
+                    <div class="persona-card">
+                        <div class="persona-avatar">M</div>
+                        <div class="persona-title">M-FACE AESTHETIC PATIENT</div>
+                        <div class="persona-subtitle">Adults 35-65+, Predominantly Female</div>
+                        <p><strong>Primary:</strong> Adults 35-65+, predominantly female, higher income ($100K+)</p>
+                        <p><strong>Values:</strong> Non-invasive options, minimal downtime, natural results, technology</p>
+                    </div>
+                    
+                    <div class="persona-card">
+                        <div class="persona-avatar">T</div>
+                        <div class="persona-title">TMJ LASER PATIENT</div>
+                        <div class="persona-subtitle">Adults 20-50, Predominantly Female</div>
+                        <p><strong>Primary:</strong> Adults 20-50, predominantly female, experiencing jaw pain/dysfunction</p>
+                        <p><strong>Values:</strong> Non-invasive relief, improved function, comfort, expertise</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">COMPETITIVE ADVANTAGE VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="advantage-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">Y</div>
+                        <div class="advantage-title">YOMI ADVANTAGE</div>
+                        <ul>
+                            <li><strong>First and only</strong> robotic implant system on Staten Island</li>
+                            <li>Superior precision compared to traditional/guided methods</li>
+                            <li>Minimally invasive potential and accelerated workflows</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">M</div>
+                        <div class="advantage-title">M-FACE ADVANTAGE</div>
+                        <ul>
+                            <li>Limited competitors offering advanced BTL technology</li>
+                            <li>Unique needle-free facial rejuvenation option</li>
+                            <li>Dual-action (RF + HIFES) for comprehensive results</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advantage-card">
+                        <div class="advantage-icon">T</div>
+                        <div class="advantage-title">TMJ LASER ADVANTAGE</div>
+                        <ul>
+                            <li>Few specialized TMJ-focused practices</li>
+                            <li>Non-invasive alternative to splints, medications, surgery</li>
+                            <li>Seamlessly integrated with dental care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- MARKETING STRATEGY -->
+        <section id="marketing-strategy" data-aos="fade-up">
+            <h2>4.0 MARKETING & PATIENT ACQUISITION STRATEGY</h2>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="funnel-container">
+                    <div class="funnel-section">AWARENESS: Digital Presence & Community Outreach</div>
+                    <div class="funnel-section">INTEREST: Educational Content & Technology Showcase</div>
+                    <div class="funnel-section">CONSIDERATION: Consultations & Patient Education</div>
+                    <div class="funnel-section">CONVERSION: Treatment Planning & Financing</div>
+                    <div class="funnel-section">ADVOCACY: Reviews & Referrals</div>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">DIGITAL DOMINANCE STRATEGY</h3>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>LOCAL SEO & ONLINE VISIBILITY</h4>
+                    <ul>
+                        <li>Optimized Google Business Profile with technology focus</li>
+                        <li>Service-specific landing pages for each technology</li>
+                        <li>Local citation building across healthcare directories</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>SOCIAL MEDIA STRATEGY</h4>
+                    <ul>
+                        <li>Instagram-focused visual content strategy</li>
+                        <li>Content pillars:
+                            <ul>
+                                <li>Technology education</li>
+                                <li>Before & after showcases</li>
+                                <li>Behind-the-scenes content</li>
+                                <li>Patient testimonials</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="300">
+                    <h4>CONTENT MARKETING</h4>
+                    <ul>
+                        <li>Educational blog posts on technology benefits</li>
+                        <li>Video demonstrations of Yomi, M-Face, and laser treatments</li>
+                        <li>Downloadable patient guides for each service</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="400">
+                    <h4>PAID ADVERTISING</h4>
+                    <ul>
+                        <li>Google Local Services Ads for high-intent searches</li>
+                        <li>Targeted search campaigns for technology-specific terms</li>
+                        <li>Visual social ads showcasing results</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">COMMUNITY ENGAGEMENT VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="map-container">
+                    <svg class="map-si" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Simplified Staten Island map shape -->
+                        <path d="M100,100 C100,50 200,50 250,75 C300,100 350,150 350,200 C350,250 300,300 250,325 C200,350 150,350 100,300 C50,250 50,200 100,100 Z" fill="#e3f2fd" stroke="#005a87" stroke-width="2"></path>
+                        
+                        <!-- Community engagement points -->
+                        <circle cx="150" cy="150" r="8" fill="#eb6909">
+                            <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="160" y="150" font-size="10" fill="#333">Chamber of Commerce</text>
+                        
+                        <circle cx="250" cy="180" r="8" fill="#6ac1e5">
+                            <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="260" y="180" font-size="10" fill="#333">Health Fair</text>
+                        
+                        <circle cx="200" cy="250" r="8" fill="#7acc6e">
+                            <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="210" y="250" font-size="10" fill="#333">Community Event</text>
+                        
+                        <circle cx="150" cy="300" r="8" fill="#f7d547">
+                            <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="160" y="300" font-size="10" fill="#333">Local Sponsorship</text>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>LOCAL PARTNERSHIPS</h4>
+                    <ul>
+                        <li>Staten Island Chamber of Commerce networking</li>
+                        <li>Cross-promotion with complementary businesses</li>
+                        <li>Community organization educational talks</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>LOCAL EVENTS & SPONSORSHIPS</h4>
+                    <ul>
+                        <li>Health fair participation with technology demos</li>
+                        <li>Strategic local event sponsorships</li>
+                        <li>Practice open house events</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="300">
+                    <h4>PUBLIC RELATIONS</h4>
+                    <ul>
+                        <li>Media outreach to Staten Island Advance/SILive.com</li>
+                        <li>"Staten Island Native Brings Robotic Dentistry Home" angle</li>
+                        <li>Position as local technology pioneer</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">REFERRAL NETWORK VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <canvas id="referralNetworkChart"></canvas>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>PROFESSIONAL REFERRALS</h4>
+                    <ul>
+                        <li>Personal outreach to top Staten Island GPs</li>
+                        <li>Professional referral packs with technology education</li>
+                        <li>Clear communication protocols and patient return guarantee</li>
+                        <li>Continuing education events for local dentists</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>PATIENT REFERRALS</h4>
+                    <ul>
+                        <li>Structured referral program with ethical incentives</li>
+                        <li>Multi-channel promotion of referral opportunities</li>
+                        <li>Simplified referral process and tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- OPERATIONAL EFFICIENCY -->
+        <section id="operational-efficiency" data-aos="fade-up">
+            <h2>5.0 OPERATIONAL EFFICIENCY FOR SUCCESS</h2>
+            
+            <h3 data-aos="fade-up">MARKETING AUTOMATION VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="workflow-container">
+                    <div class="workflow-step">
+                        <div class="workflow-title">NEW PATIENT INQUIRY</div>
+                        <p>Automated response email → Follow-up task created → Service-specific educational content sent</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-title">APPOINTMENT MANAGEMENT</div>
+                        <p>Digital scheduling → Automated reminders → Pre-appointment preparation instructions</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-title">POST-TREATMENT</div>
+                        <p>Follow-up care instructions → Satisfaction survey → Review request → Referral opportunity</p>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="workflow-title">ONGOING ENGAGEMENT</div>
+                        <p>Personalized newsletter → Treatment milestone check-ins → Educational content specific to interest</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>ESSENTIAL AUTOMATED WORKFLOWS</h4>
+                    <ul>
+                        <li>New patient inquiry responses</li>
+                        <li>Appointment reminders & confirmations</li>
+                        <li>Post-treatment follow-ups</li>
+                        <li>Review requests</li>
+                        <li>Personalized educational content</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>STREAMLINED COMMUNICATIONS</h4>
+                    <ul>
+                        <li>Digital intake forms</li>
+                        <li>Standardized email/SMS templates for each service</li>
+                        <li>CRM lead tracking system</li>
+                        <li>Staff communication scripts for high-tech procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PHASED ROLLOUT -->
+        <section id="phased-rollout" data-aos="fade-up">
+            <h2>6.0 PHASED ROLLOUT PLAN & KPI TRACKING</h2>
+            
+            <h3 data-aos="fade-up">PHASED IMPLEMENTATION VISUALIZATION</h3>
+            
+            <div class="animation-container tall-animation" data-aos="fade-up">
+                <div class="timeline">
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>PHASE 1 (PRE-LAUNCH)</h3>
+                            <p><strong>Month 1</strong></p>
+                            <ul>
+                                <li>Website & branding development</li>
+                                <li>Google Business Profile optimization</li>
+                                <li>Marketing automation implementation</li>
+                                <li>Referral materials creation</li>
+                                <li>Referrer identification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h3>PHASE 2 (LAUNCH)</h3>
+                            <p><strong>Months 2-3</strong></p>
+                            <ul>
+                                <li>Website & social launch</li>
+                                <li>Initial PR push</li>
+                                <li>Targeted paid advertising activation</li>
+                                <li>First-wave referrer outreach</li>
+                                <li>Launch event execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h3>PHASE 3 (SCALING)</h3>
+                            <p><strong>Months 4+</strong></p>
+                            <ul>
+                                <li>Data analysis & strategy optimization</li>
+                                <li>Content expansion</li>
+                                <li>Broader referrer outreach</li>
+                                <li>Community event participation</li>
+                                <li>CE event execution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 data-aos="fade-up">KPI DASHBOARD VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <canvas id="kpiDashboardChart"></canvas>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>WEBSITE PERFORMANCE</h4>
+                    <ul>
+                        <li>Unique visitors by source</li>
+                        <li>Conversion rate by service</li>
+                        <li>Time on key service pages</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>MARKETING CHANNELS</h4>
+                    <ul>
+                        <li>Search rankings for target keywords</li>
+                        <li>Social engagement & growth</li>
+                        <li>Ad performance (CTR, CPL, ROAS)</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="300">
+                    <h4>PRACTICE GROWTH</h4>
+                    <ul>
+                        <li>New consultations by service</li>
+                        <li>Referral sources & conversion</li>
+                        <li>Revenue by service line</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- BUDGET -->
+        <section id="budget" data-aos="fade-up">
+            <h2>7.0 BUDGET ALLOCATION & ROI PROJECTION</h2>
+            
+            <h3 data-aos="fade-up">BUDGET VISUALIZATION</h3>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <div class="budget-container">
+                    <div class="budget-chart">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                    <div class="budget-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #005a87;"></div>
+                            <div>Paid Advertising (40-50%)</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #6ac1e5;"></div>
+                            <div>SEO & Content (20-25%)</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #eb6909;"></div>
+                            <div>Marketing Automation (10-15%)</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #7acc6e;"></div>
+                            <div>Referral & Community (10-15%)</div>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #f7d547;"></div>
+                            <div>PR & Contingency (5-10%)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="column" data-aos="fade-up" data-aos-delay="100">
+                    <h4>LAUNCH PHASE ALLOCATION (FIRST 6 MONTHS)</h4>
+                    <ul>
+                        <li><strong>40-50%</strong> Paid Advertising (LSA, Search, Social)</li>
+                        <li><strong>20-25%</strong> SEO & Content Marketing</li>
+                        <li><strong>10-15%</strong> Marketing Automation & Tools</li>
+                        <li><strong>10-15%</strong> Referral Marketing & Community</li>
+                        <li><strong>5-10%</strong> PR & Contingency</li>
+                    </ul>
+                </div>
+                
+                <div class="column" data-aos="fade-up" data-aos-delay="200">
+                    <h4>ROI PROJECTION BY SERVICE LINE</h4>
+                    <ul>
+                        <li><strong>Yomi Implants:</strong> Highest per-patient value, longer sales cycle</li>
+                        <li><strong>M-Face/Aesthetics:</strong> Mid-range value, faster conversion</li>
+                        <li><strong>TMJ Laser:</strong> Recurring treatment potential, referral engine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONCLUSION -->
+        <section id="conclusion" data-aos="fade-up">
+            <h2>8.0 CONCLUSION: PATH TO SUCCESS</h2>
+            
+            <div class="animation-container" data-aos="fade-up">
+                <canvas id="successFactorsChart"></canvas>
+            </div>
+            
+            <h3 data-aos="fade-up">KEY SUCCESS DRIVERS</h3>
+            <ol data-aos="fade-up">
+                <li><strong>Technology Differentiation:</strong> Consistently communicate Yomi, M-Face and laser benefits</li>
+                <li><strong>Marketing Automation:</strong> Implement immediately to support limited staff resources</li>
+                <li><strong>Digital Marketing Focus:</strong> Prioritize high-intent channels and targeted messaging</li>
+                <li><strong>Referral Network Activation:</strong> Proactively engage potential referring practices</li>
+                <li><strong>Local Advantage Leverage:</strong> Highlight Staten Island roots in all outreach</li>
+                <li><strong>Continuous Optimization:</strong> Track KPIs rigorously and adapt strategy based on data</li>
+            </ol>
+            
+            <div class="highlight-box" data-aos="fade-up">
+                <h3>ULTIMATE VISION</h3>
+                <p><strong>Dr. Greg Pedro:</strong> Staten Island's premier provider of advanced dental and aesthetic solutions, known for technological innovation, exceptional results, and compassionate care.</p>
+            </div>
+        </section>
+        
+        
+        <!-- INDUSTRY PERSPECTIVE -->
+        <section id="industry-perspective" data-aos="fade-up">
+            <h2>9.0 INDUSTRY PERSPECTIVE</h2>
+            
+            <div class="highlight-box special-highlight" data-aos="fade-up" style="background-color: #f5f5f5; border-left: 4px solid #005a87; padding: 30px; position: relative;">
+                <div style="position: absolute; top: -15px; left: 20px; background-color: #005a87; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px;">EXPERT OPINION</div>
+                <h3 style="color: #005a87; margin-top: 10px;">A NOTE FROM JASON GOLDEN</h3>
+                <h4 style="color: #6ac1e5; font-style: italic; margin-bottom: 20px;">Healthcare Marketing Strategist & Digital Innovation Consultant</h4>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                    Dr. Pedro's strategic launch represents a rare convergence of specialized expertise, cutting-edge technology, and authentic community roots. Having analyzed numerous practice launches across the Northeast corridor, I believe this plan positions Dr. Pedro for exceptional success in the Staten Island market.
+                </p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                    The integration of Yomi robotic implant technology with advanced aesthetic services creates a powerful differentiation story that transcends traditional specialty practices. Most importantly, the emphasis on marketing automation from day one addresses the critical operational challenge of launching with minimal staff while maintaining high-touch patient communication.
+                </p>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    In today's increasingly competitive dental landscape, practices that leverage both technological superiority and authentic local connections stand apart. Dr. Pedro's strategic positioning at this intersection, combined with the robust digital-first marketing approach outlined in this plan, establishes a compelling foundation for rapid growth and market leadership.
+                </p>
+                
+                <div style="text-align: right; margin-top: 30px;">
+                    <img src="/api/placeholder/150/60" alt="Jason Golden Signature" style="margin-bottom: 10px;">
+                    <p style="font-weight: bold; margin: 0; color: #005a87;">Jason Golden</p>
+                    <p style="font-style: italic; margin: 0; font-size: 0.9rem; color: #666;">MBA, Healthcare Marketing Innovation</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="footer">
+            <p>Presentation designed by Jason Golden</p>
+            <p><strong>Contact:</strong> 201-523-1306 | jgolden@bowerycreativeagency.com</p>
+            <p>© 2025 All Rights Reserved</p>
+        </div>
+    </div>
+    
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+            
+            // Healthcare Needs Chart
+            const healthcareCtx = document.getElementById('healthcareChart').getContext('2d');
+            const healthcareChart = new Chart(healthcareCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Implant Need (65+)', 'Skipped Dental Visits', 'Aesthetic Procedure Interest', 'TMJ Disorder Prevalence'],
+                    datasets: [{
+                        label: 'Staten Island Market Needs',
+                        data: [25, 40, 35, 8.5],
+                        backgroundColor: [
+                            '#005a87',
+                            '#6ac1e5',
+                            '#eb6909',
+                            '#7acc6e'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Referral Network Chart
+            const referralCtx = document.getElementById('referralNetworkChart').getContext('2d');
+            const referralChart = new Chart(referralCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'General Dentists',
+                        'Physicians',
+                        'Physical Therapists',
+                        'Existing Patients',
+                        'Community Partners',
+                        'Online Referrals'
+                    ],
+                    datasets: [{
+                        label: 'Referral Potential',
+                        data: [90, 65, 70, 80, 60, 75],
+                        fill: true,
+                        backgroundColor: 'rgba(106, 193, 229, 0.2)',
+                        borderColor: '#6ac1e5',
+                        pointBackgroundColor: '#005a87',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#eb6909'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+            
+            // KPI Dashboard Chart
+            const kpiCtx = document.getElementById('kpiDashboardChart').getContext('2d');
+            const kpiChart = new Chart(kpiCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                    datasets: [
+                        {
+                            label: 'New Patients',
+                            data: [5, 12, 20, 32, 45, 60],
+                            borderColor: '#005a87',
+                            backgroundColor: 'rgba(0, 90, 135, 0.1)',
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: 'Website Traffic',
+                            data: [200, 400, 700, 1200, 1600, 2000],
+                            borderColor: '#eb6909',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            yAxisID: 'y1'
+                        },
+                        {
+                            label: 'Revenue Growth',
+                            data: [10, 35, 65, 100, 140, 180],
+                            borderColor: '#7acc6e',
+                            backgroundColor: 'transparent',
+                            tension: 0.3,
+                            yAxisID: 'y2'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'New Patients'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: {
+                                drawOnChartArea: false,
+                            },
+                            title: {
+                                display: true,
+                                text: 'Website Traffic'
+                            }
+                        },
+                        y2: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: {
+                                drawOnChartArea: false,
+                            },
+                            title: {
+                                display: true,
+                                text: 'Revenue Growth (%)'
+                            }
+                        },
+                    }
+                }
+            });
+            
+            // Budget Chart
+            const budgetCtx = document.getElementById('budgetChart').getContext('2d');
+            const budgetChart = new Chart(budgetCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Paid Advertising',
+                        'SEO & Content',
+                        'Marketing Automation',
+                        'Referral & Community',
+                        'PR & Contingency'
+                    ],
+                    datasets: [{
+                        data: [45, 22, 12, 13, 8],
+                        backgroundColor: [
+                            '#005a87',
+                            '#6ac1e5',
+                            '#eb6909',
+                            '#7acc6e',
+                            '#f7d547'
+                        ],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Success Factors Chart
+            const successCtx = document.getElementById('successFactorsChart').getContext('2d');
+            const successChart = new Chart(successCtx, {
+                type: 'polarArea',
+                data: {
+                    labels: [
+                        'Technology Differentiation',
+                        'Marketing Automation',
+                        'Digital Marketing Focus',
+                        'Referral Network',
+                        'Local Advantage',
+                        'Continuous Optimization'
+                    ],
+                    datasets: [{
+                        data: [90, 80, 85, 75, 95, 85],
+                        backgroundColor: [
+                            'rgba(0, 90, 135, 0.7)',
+                            'rgba(106, 193, 229, 0.7)',
+                            'rgba(235, 105, 9, 0.7)',
+                            'rgba(122, 204, 110, 0.7)',
+                            'rgba(247, 213, 71, 0.7)',
+                            'rgba(191, 148, 228, 0.7)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            ticks: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
